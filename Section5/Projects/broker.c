@@ -10,7 +10,7 @@ int main()
     printf("Enter the numner of shares: ");
     scanf("%d", &numberShares);
     printf("Enter the price per share: ");
-    scanf("%f", pricePerShare);
+    scanf("%f", &pricePerShare);
 
     value = numberShares * pricePerShare;
 
@@ -47,7 +47,16 @@ int main()
         commission = 39.00f;
     }
 
-    printf("Commission: $%.2f\n", commission);
+    if (numberShares < 2000)
+    {
+        rivalCommission = 33 + (numberShares * .03f);
+    }
+    else if (numberShares > 2000)
+    {
+        rivalCommission = (33 + (2000 * .03f)) + ((numberShares - 2000) * .02f);
+    }
+
+    printf("Commission: $%.2f\nRival commission: $%.2f\n", commission, rivalCommission);
 
     return 0;
 }
