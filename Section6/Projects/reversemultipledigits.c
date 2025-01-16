@@ -4,14 +4,19 @@
 
 int main()
 {
-    printf("Enter a non-negative number: ");
     int userInput;
+    printf("Enter a non-negative number: ");
     scanf("%d", &userInput);
+
+    printf("Digits reversed: ");
 
     do
     {
-
+        printf("%d", userInput % 10);
+        userInput /= 10;
     } while (userInput != 0);
 
-    printf("The reverse is: %d%d%d\n", threeDigits % 10, (threeDigits / 10) % 10, (threeDigits / 10) / 10); //last could also be written as threeDigits / 100
+    printf("\n");
+
+    return 0;
 }
